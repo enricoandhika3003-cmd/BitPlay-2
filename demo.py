@@ -50,6 +50,8 @@ def oddity2(arr, size):
             x = x^arr[i]
         else:
             y = y^arr[i]
+    
+    print(f"The two ODD elements are {x} & {y}")
 
 arr = []
 
