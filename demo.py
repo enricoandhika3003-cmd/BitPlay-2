@@ -61,3 +61,25 @@ for i in range(0, arr_size):
     arr.append(z)
 
 oddity2(arr, arr_size)
+
+
+#ReverseBits
+def reverse_bits(n):
+    reversed_num = 0
+    bit_length = n.bit_length()
+
+    for i in range(bit_length):
+        bit = (n>>i) & 1
+        
+        reversed_num |= (bit << (bit_length-1-i))
+
+    return reversed_num
+
+n = int(input("Enter your original number: "))
+
+original_bin = bin(n)[2:]
+reversed_num = reverse_bits(n)
+reversed_bin = bin(reversed_num)[2:].zfill(len(original_bin))
+
+print(f"{n} ({original_bin})")
+print(f"Reversed Number: {reversed_num} ({reversed_bin})")
